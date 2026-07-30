@@ -1,0 +1,19 @@
+# Raw and generated data
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+
+# Analysis outputs
+/results/*
+!/results/.gitkeep
+
+# R and RStudio files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
