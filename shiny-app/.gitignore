@@ -1,0 +1,9 @@
+models/*
+!models/.gitkeep
+data/predictor_ranges.csv
+.Rhistory
+.RData
+.Ruserdata
+results/*
+www/Figure_2_ROC_test.png
+www/Figure_3_calibration_test.png
