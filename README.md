@@ -348,6 +348,23 @@ To reproduce the analysis, place the source dataset in `data/raw/` and run the s
 
 This project demonstrates that baseline immune-profile variables can discriminate between symptomatic influenza and protected controls with moderate-to-good performance.
 
+## Vaccination sensitivity analysis
+
+The primary analysis combined vaccinated and unvaccinated participants and used 16 immune predictors without vaccination status.
+
+A post-hoc training-set sensitivity analysis added `Flu_Vaccine_2018` as an additional predictor while preserving the original repeated cross-validation folds and fixed model settings.
+
+| Model | Primary AUC | AUC with vaccination |
+|---|---:|---:|
+| Elastic Net | 0.827 | 0.822 |
+| Random Forest | 0.857 | 0.855 |
+| XGBoost | 0.849 | 0.851 |
+| Equal-weight ensemble | 0.857 | 0.858 |
+
+Adding vaccination status did not materially change model discrimination. The penalized Elastic Net coefficient for vaccinated versus unvaccinated status was 0.053, corresponding to an odds ratio of 1.055.
+
+The immune-only models were therefore retained as the primary analysis. This does not imply that vaccination has no effect; it means vaccination status provided little additional predictive information beyond the measured immune variables in this dataset.
+
 The main limitations are:
 
 - small number of symptomatic cases
